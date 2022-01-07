@@ -1,24 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import ResponsiveAppBar from './components/navbar.jsx'
+import 'react-router-dom';
+import { Route,BrowserRouter as Router, Routes } from 'react-router-dom';
+import Home from './home';
+import SignUpform from './components/signupdrawer';
+import Profile from './components/profile';
+import PermanentDrawer from './components/sidebar';
+
+// import TemporaryDrawer from './components/Drawer';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+     <Router>
+       <Routes>
+         <Route path="/"  element={<> 
+          <ResponsiveAppBar/>
+       
+         <Home/>     
+  </> } /> 
+  <Route path="/home"  element={<> 
+    <ResponsiveAppBar/>
+       
+       <Home/>     
+</> } /><Route path="/signup" element={<>
+  <ResponsiveAppBar/>
+
+         <SignUpform/>     
+  </> } />
+  <Route path="/profile" element={<>
+    <ResponsiveAppBar/>
+
+         <Profile/>     
+  </> } />
+  <Route path="/blogs" element={<> 
+        <PermanentDrawer/>   
+  </> } />
+  
+       </Routes>
+
+   </Router>
+ 
+ 
+   
   );
 }
 
