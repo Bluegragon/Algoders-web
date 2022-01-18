@@ -9,6 +9,7 @@ import Profile from './components/profile/profile';
 
 import Applytomentor from './components/applytomentor';
 import PermanentDrawer from './components/blog/sidebar';
+import EditProfile from './components/profile/editprofile';
 
 // import TemporaryDrawer from './components/Drawer';
 function App() {
@@ -37,6 +38,10 @@ function App() {
   </> } />
   <Route path="/blogs" element={<> 
      <PermanentDrawer/>  
+  </> } />
+  <Route path="/update" element={<>
+    <ResponsiveAppBar/>
+    <EditProfile/>     
   </> } />
   
      

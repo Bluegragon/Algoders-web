@@ -20,7 +20,7 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function FullWidthGrid() {
   return (
     <Paper sx={{ p: 5, margin: "auto", maxWidth: "100%", flexGrow: 1 ,boxShadow:'none'}}>
-      <Grid container spacing={2} paddingTop={4}>
+      <Grid container  justifyContent={{lg:'center',xs:'center'}} spacing={2} paddingTop={4}>
         <Grid
           item
           xs={12} md={6} lg={6}

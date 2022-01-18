@@ -18,16 +18,16 @@ export default function Profile() {
     <Box>
          <Typography variant='h5'    sx={{p:{xs:3,xl:7}}}>Username</Typography>
          <Typography variant='body1' sx={{p:{xs:2,xl:3}}}>FirstName</Typography>
-         <Typography variant='body2' sx={{p:{xs:2,xl:3}}}>FirstName</Typography>
+         
        
          <Typography variant='body1' sx={{p:{xs:3,xl:7}}}>LastName</Typography>
-         <Typography variant='body2' sx={{p:{xs:2,xl:3}}}>FirstName</Typography>
+        
 
          <Typography variant='body1' sx={{p:{xs:3,xl:3}}}>Following</Typography>
          <Typography variant='body1' sx={{p:{xs:3,xl:3}}}>Description:</Typography>         
          <Typography variant="body2" sx={{p:1,maxWidth:'30vh'}}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, quis qui eos deserunt praesentium, id officia delectus molestiae, laudantium accusantium incidunt maiores. Quibusdam quia modi rem nulla, ratione tempore odio.</Typography>         
          <Stack direction='row'> <Link to='/update' style={{textDecoration:'none'}}>
-                <Button variant="contained"
+               <Button variant="contained"
                   size="medium"
                  color="success">
                   Edit

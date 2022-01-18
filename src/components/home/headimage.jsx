@@ -21,6 +21,7 @@ const Img = styled("img")({
   display: "block",
   maxWidth: "100%",
   maxHeight: "100%",
+  
 });
 
 export default function ComplexGrid() {
@@ -54,7 +55,7 @@ export default function ComplexGrid() {
           paddingBlock:4,
       }}
     >
-      <Grid container spacing={12} sx={{background: "linear-gradient(172deg, rgba(247,255,244,1) 9%, rgba(37,217,64,1) 100%)",paddingBlock:4,paddingInlineEnd:2}}>
+      <Grid container spacing={12} justifyContent={{lg:'center',xs:'center'}} sx={{background: "linear-gradient(172deg, rgba(247,255,244,1) 9%, rgba(37,217,64,1) 100%)",paddingBlock:4,paddingInlineEnd:2}}>
         <Grid item>
           <Img
             alt="complex"
@@ -70,7 +71,7 @@ export default function ComplexGrid() {
             spacing={2}
             sx={{ padding: "auto" }}
           >
-            <Grid item xs={12} sx={{background:'white',borderRadius:'15%',paddingInlineStart:2,  marginLeft: "min(1rem,4vw)"}}>
+            <Grid item xs={12}  sx={{background:'white',borderRadius:'15%',paddingInlineStart:2,  marginLeft: "min(1rem,4vw)",justifyContent:{lg:'center'}}}>
               <ThemeProvider theme={theme}>
                 <Typography
                   gutterBottom
