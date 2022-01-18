@@ -1,12 +1,12 @@
-import ComplexGrid from './components/headimage.jsx';
-import Videoplayer from './components/Video';
-import FullWidthGrid from './components/objective';
-import Mentor from './components/mentor';
-import Appstore from './components/downloadapp';
-import { Downbar } from './components/downbar';
+import ComplexGrid from './headimage.jsx';
 import { useEffect } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
+import Videoplayer from './Video.jsx';
+import Mentor from './mentor.jsx';
+import Appstore from './downloadapp.jsx';
+import Downbar from './downbar';
+import FullWidthGrid from './objective.jsx';
 const Home = () => {
      useEffect(() => {
           Aos.init({duration:2500})

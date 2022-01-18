@@ -3,10 +3,12 @@ import './App.css';
 import ResponsiveAppBar from './components/navbar.jsx'
 import 'react-router-dom';
 import { Route,BrowserRouter as Router, Routes } from 'react-router-dom';
-import Home from './home';
-import SignUpform from './components/signupdrawer';
-import Profile from './components/profile';
-import PermanentDrawer from './components/sidebar';
+import Home from './components/home/home';
+import SignUpform from './components/signup/signupdrawer';
+import Profile from './components/profile/profile';
+
+import Applytomentor from './components/applytomentor';
+import PermanentDrawer from './components/blog/sidebar';
 
 // import TemporaryDrawer from './components/Drawer';
 function App() {
@@ -34,7 +36,13 @@ function App() {
          <Profile/>     
   </> } />
   <Route path="/blogs" element={<> 
-        <PermanentDrawer/>   
+     <PermanentDrawer/>  
+  </> } />
+  
+     
+       <Route path="/application" element={<> 
+        <ResponsiveAppBar/>
+        <Applytomentor/>   
   </> } />
   
        </Routes>

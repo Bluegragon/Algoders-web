@@ -4,6 +4,7 @@ import { Button, Paper, Typography } from "@mui/material";
 import MentorCard from "./mentorcard";
 import { ThemeProvider } from "@emotion/react";
 import { createTheme } from '@mui/material/styles';
+import { Link } from "react-router-dom";
 
 let theme = createTheme({
   palette: {
@@ -98,10 +99,10 @@ export default function Mentor() {
           />
           <MentorCard title={'True, Project-based Learning'} content={'Learn Full-Stack development or Backend development through an immersive project-based curriculum focused on practical developer skills.'} source={'https://www.crio.do/static/4c17d31f8cebf378ce78055371413190/647c9/One.webp'} />
         </Box>
-        <ThemeProvider theme={theme}>
-              <Button color='primary' variant='contained' size='large'>
+      <Link to='/application' style={{textDecoration:'none'}}>
+              <Button color='primary' variant='contained' size='large' to='/application'>
             APPLY FOR MENTOR </Button>
-             </ThemeProvider>
+            </Link>
        
       </Box>
     </Paper>

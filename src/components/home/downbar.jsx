@@ -9,7 +9,7 @@ import { Paper } from "@mui/material";
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 
-export const Downbar = () => {
+export default function Downbar() {
   return (
     <Paper
       sx={{

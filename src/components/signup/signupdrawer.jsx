@@ -9,7 +9,6 @@ import { useState } from 'react';
 const useStyles=makeStyles({
 root:{
  background:'primary',
-  p:5,
   marginBlock:4,
 }
 });
@@ -42,7 +41,7 @@ export default function SignUpform() {
     <Box
       component="form"
       sx={{
-        '& .MuiTextField-root': { m: 2,  },
+        '& .MuiTextField-root': { m: 2, width:{xs:'30ch',xl:'54ch'} },
 
         p:4,display:'inline-flex',justifyContent:'center',flexDirection:'column', maxWidth:{xs:'100vw',sm:'100vw',md:'100vw'}
       }}
@@ -51,15 +50,15 @@ export default function SignUpform() {
     >
      <label style={{fontSize:'5rem',fontFamily:'serif',color:'#0d6505',paddingBlock:4}}>SIGN UP FORM</label>
       <TextField className={classes.root}
-        id="outlined-basic"
+      variant='filled'
+      color='success'
         label="FirstName"
         onChange={(e)=>{setInfo({FirstName:e.target.value,})}}
         onSelect={() => setShrink1({Sh1:true})}
         InputLabelProps={{ shrink: shrink1 }}
         /> 
       <TextField className={classes.root}
-        id="outlined-basic"
-        label="LastName"
+        variant='filled' color='success'       label="LastName"
         value={info.LastName}
         onChange={(e)=>{setInfo({LastName:e.target.value,})}}
         onSelect={() => setShrink1({Sh2:true})}
@@ -68,16 +67,14 @@ export default function SignUpform() {
         
         /> 
       <TextField className={classes.root}
-        id="outlined-basic"
-        label="UserName"
+        variant='filled' color='success'       label="UserName"
         onChange={(e)=>{setInfo({UserName:e.target.value,})}}
         onSelect={() => setShrink1({Sh3:true})}
         InputLabelProps={{ shrink: shrink1 }}
         
         /> 
       <TextField className={classes.root}
-        id="outlined-basic"
-        label="Email"
+        variant='filled'  color='success'      label="Email"
         type='email'
         value={info.Email}
         onChange={(e)=>{setInfo({Email:e.target.value,})}}
@@ -85,8 +82,7 @@ export default function SignUpform() {
         InputLabelProps={{ shrink: shrink1 }}
         /> 
       <TextField className={classes.root}
-        id="outlined-basic"
-        label="Password"
+        variant='filled'  color='success'      label="Password"
         type='password'
         value={info.Password}
         onChange={(e)=>{setInfo({Password:e.target.value,})}}

@@ -1,5 +1,5 @@
 import ReactPlayer from 'react-player'
-import '../App.css'
+
 const Videoplayer = () => {
      return (
      <div className='video'>

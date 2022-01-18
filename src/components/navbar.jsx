@@ -20,6 +20,7 @@ const pages = ['home', 'blogs', 'Browse'];
 const settings = [ 'profile', 'Logout'];
 
 
+
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
