@@ -12,6 +12,7 @@ import ResponsiveAppBar from "../navbar";
 import PostCard from "./posts";
 import { Avatar, Container } from "@mui/material";
 import Tags from "./searchbar";
+import CustomizedHook from "./mobileSearch";
 
 const drawerWidth = 400;
 let category='tech';
@@ -23,19 +24,27 @@ export default function PermanentDrawer() {
       <Box disableGutters={true} sx={{ width: {xl:`calc(100% - ${drawerWidth}px)`,xs:'100%', p:'none',m:'none'}  }}>
         {" "}
         <ResponsiveAppBar />
+        <Box sx={{display:{xl:'none',xs:'flex',sm:'flex',lg:'none'} ,justifyContent:'center'}}>
+        <CustomizedHook/>
+
+        </Box>
+        
         <Box
           component="main"
           sx={{ flexGrow: 1, bgcolor: "background.default", p:{xl: 3 ,},paddingInline:5}}
         >
           <Toolbar />
-          <Box sx={{p:4,display:{xl:'none',xs:'block'}}}> </Box>
+          <Box sx={{p:4,display:{xl:'none',xs:'block'}}}>  </Box>
 
-          <Box sx={{ marginLeft: { xl: 70 } }}>
+          <Box sx={{display:'flex',flexWrap:'wrap',padding:4,justifyContent:'space-around',alignItems:'space-between',}}>
             {" "}
             <PostCard />
+            <PostCard />
+             <PostCard />   
+             <PostCard />   
           </Box>
         </Box>
-      </Box>
+      </Box>   
       <Drawer
         sx={{display:{xl:'block',xs:'none'},
                    width: drawerWidth,
@@ -43,6 +52,7 @@ export default function PermanentDrawer() {
           "& .MuiDrawer-paper": {
             width: {xl:drawerWidth,xs:0},
             boxSizing: "border-box",
+
           },
         }}
         variant="permanent"

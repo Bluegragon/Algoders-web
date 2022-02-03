@@ -11,6 +11,10 @@ import Applytomentor from './components/applytomentor';
 import PermanentDrawer from './components/blog/sidebar';
 import EditProfile from './components/profile/editprofile';
 
+import Facebook from './components/mypost';
+import Postblog from './components/blog/postblog';
+import Downbar from './components/home/downbar';
+
 // import TemporaryDrawer from './components/Drawer';
 function App() {
   return (
@@ -48,6 +52,15 @@ function App() {
        <Route path="/application" element={<> 
         <ResponsiveAppBar/>
         <Applytomentor/>   
+  </> } />
+  <Route path="/mypost" element={<> 
+    <ResponsiveAppBar/>
+    <Facebook/>
+  </> } />
+  <Route path="/create" element={<> 
+    <ResponsiveAppBar/>
+ <Postblog/>
+   <Downbar/>
   </> } />
   
        </Routes>

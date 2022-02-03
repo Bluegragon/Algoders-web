@@ -41,6 +41,9 @@ export default function HeaderimgContainer() {
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ipsum dolores eum quibusdam ipsa eaque officia necessitatibus laudantium, ipsam earum numquam cumque quam nulla nam sequi maxime dignissimos dolorum repellendus.
     </Typography> </Box>
       </Container>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <path fill="#0099ff" fill-opacity="1" d="M0,288L48,266.7C96,245,192,203,288,186.7C384,171,480,181,576,192C672,203,768,213,864,192C960,171,1056,117,1152,133.3C1248,149,1344,235,1392,277.3L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" data-darkreader-inline-fill="" style="inline-fill:#007acc;"></path>
+</svg>
     </React.Fragment>
   );
 }

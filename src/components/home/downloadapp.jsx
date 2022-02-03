@@ -36,7 +36,7 @@ export default function Appstore() {
         </Grid>
         <Grid item xs={12}  sm={12} md={3} lg={12}>
           <Item sx={{boxShadow:'none',}}><img
-          src='https://dam.which.co.uk/IC20006-0127-00-front-615x461.jpg' alt=''  /></Item>
+          src='https://dam.which.co.uk/IC20006-0127-00-front-615x461.jpg' alt=''  style={{maxWidth:'45vw'}} /></Item>
         </Grid>
       </Grid>
     </Box>

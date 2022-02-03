@@ -9,11 +9,12 @@ import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
+import { red,green } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { Box } from '@material-ui/core';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -34,12 +35,14 @@ export default function PostCard() {
   };
 
   return (
-    <Card sx={{ maxWidth:{xl: '30vw',xs:'95vw'} }}>
+    <Box sx={{p:4}}>
+    <Card sx={{ maxWidth:{xl: '30vw',xs:'95vw'},  }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
             R
           </Avatar>
+          
         }
         action={
           <IconButton aria-label="settings">
@@ -48,6 +51,7 @@ export default function PostCard() {
         }
         title="Shrimp and Chorizo Paella"
         subheader="September 14, 2016"
+        sx={{bgcolor:green}}
       />
       <CardMedia
         component="img"
@@ -107,6 +111,6 @@ export default function PostCard() {
           </Typography>
         </CardContent>
       </Collapse>
-    </Card>
+    </Card></Box>
   );
 }

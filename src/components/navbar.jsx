@@ -16,12 +16,16 @@ import { Link } from 'react-router-dom';
 import Logo from "./algo.jpeg";
 
 
+
+const pages1 = ['home', 'blogs', 'create'];
 const pages = ['home', 'blogs', 'Browse'];
+
 const settings = [ 'profile', 'Logout'];
 
 
 
 const ResponsiveAppBar = () => {
+  const [isMentor, setMentor] = React.useState(true);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -42,7 +46,7 @@ const ResponsiveAppBar = () => {
 
   return (
     <AppBar position="sticky">
-      <Container maxWidth="x2" sx={{background: ' linear-gradient(0deg, rgba(61,207,44,1) 11%, rgba(52,125,92,1) 100%)' , color:'white',}}>
+      <Container  maxWidth="x2" sx={{background: ' linear-gradient(0deg, rgba(61,207,44,1) 11%, rgba(52,125,92,1) 100%)' , color:'white',}}>
         <Toolbar disableGutters>
         <Box
             component="img"
@@ -66,7 +70,6 @@ const ResponsiveAppBar = () => {
           >
             Algoders
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -78,7 +81,32 @@ const ResponsiveAppBar = () => {
             >
               <MenuIcon />
             </IconButton>
-            <Menu
+            {isMentor ? <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+                color:'green',
+              }}
+            >
+              {pages1.map((page1) => (
+                <MenuItem key={page1} onClick={handleCloseNavMenu}>
+                  <Link to={`/${page1}`}  style={{textDecoration:'none'}} ><Typography textAlign="center">{page1}</Typography></Link>
+                
+                </MenuItem>
+              ))}
+            </Menu>: <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
@@ -103,7 +131,7 @@ const ResponsiveAppBar = () => {
                 
                 </MenuItem>
               ))}
-            </Menu>
+            </Menu>}
           </Box>
           <Typography
             variant="h6"
@@ -113,7 +141,18 @@ const ResponsiveAppBar = () => {
           >
             Algoders
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          
+         {isMentor ?<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {pages1.map((page1) => (
+              <Button
+                key={page1}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block', }}
+              >
+               <Link to={`/${page1}`} style={{textDecoration:'none',color:'white'}}>{page1}</Link> 
+              </Button>
+            ))}
+          </Box>: <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
                 key={page}
@@ -123,7 +162,7 @@ const ResponsiveAppBar = () => {
                <Link to={`/${page}`} style={{textDecoration:'none',color:'white'}}>{page}</Link> 
               </Button>
             ))}
-          </Box>
+          </Box>}
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
